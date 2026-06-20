@@ -1,18 +1,164 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-<title>Kopi Quote</title>
-</head>
-<body style="background:black;color:white;text-align:center;padding-top:100px;font-size:30px">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<div id="quote"></div>
+<title>Pesan dari Secangkir Kopi</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+background:linear-gradient(-45deg,#1c120d,#3b2418,#5c3a21,#2d1b12);
+background-size:400% 400%;
+animation:bgMove 12s ease infinite;
+overflow:hidden;
+}
+
+.card{
+width:100%;
+max-width:700px;
+padding:35px;
+text-align:center;
+
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(15px);
+
+border-radius:30px;
+
+box-shadow:
+0 8px 32px rgba(0,0,0,.3);
+
+animation:fadeUp 1.2s ease;
+}
+
+.coffee{
+font-size:60px;
+margin-bottom:15px;
+animation:float 3s ease-in-out infinite;
+}
+
+.title{
+color:white;
+font-size:15px;
+letter-spacing:2px;
+text-transform:uppercase;
+opacity:.8;
+margin-bottom:25px;
+}
+
+.quote{
+color:white;
+font-size:1.7rem;
+line-height:1.8;
+font-weight:300;
+}
+
+.footer{
+margin-top:30px;
+color:white;
+opacity:.75;
+font-size:.9rem;
+}
+
+@keyframes bgMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(25px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@keyframes float{
+0%{
+transform:translateY(0px);
+}
+50%{
+transform:translateY(-10px);
+}
+100%{
+transform:translateY(0px);
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="coffee">☕</div>
+
+<div class="title">
+Pesan dari Secangkir Kopi
+</div>
+
+<div id="quote" class="quote"></div>
+
+<div class="footer">
+Scan • Baca • Nikmati Kopimu
+</div>
+
+</div>
 
 <script>
 
 const quotes = {
-1:"Jangan menyerah sekarang.",
-2:"Kamu lebih kuat dari yang kamu kira.",
-3:"Kadang yang hilang hanya sedang mengajarkan."
+
+1:"Kadang yang paling menyakitkan bukan kehilangan, tetapi menyadari bahwa kamu tidak pernah benar-benar dimiliki.",
+
+2:"Kalau hari ini terasa berat, ingatlah bahwa kopi juga menjadi nikmat setelah melalui proses yang pahit.",
+
+3:"Jangan terlalu keras pada dirimu sendiri. Kamu juga manusia.",
+
+4:"Ada yang datang untuk menetap, ada yang datang untuk mengajarkan.",
+
+5:"Tidak semua kehilangan berarti kegagalan.",
+
+6:"Kalau dia memang untukmu, waktu tidak akan membuatnya pergi.",
+
+7:"Kamu lebih kuat daripada yang kamu kira.",
+
+8:"Bagaimana jika hal terbaik dalam hidupmu sedang menunggu satu langkah berani yang belum kamu ambil?",
+
+9:"Jangan menyerah sekarang. Ceritamu belum selesai.",
+
+10:"Versi terbaik dirimu tidak muncul karena keberuntungan, tetapi karena kebiasaan yang baik.",
+
+11:"Mungkin semesta sedang menyiapkan sesuatu yang lebih baik daripada yang kamu minta.",
+
+12:"Terima kasih sudah bertahan sejauh ini.",
+
+13:"Kamu tidak harus hebat untuk memulai, tetapi kamu harus memulai untuk menjadi hebat.",
+
+14:"Ada rindu yang tidak meminta untuk dipertemukan, hanya ingin dikenang.",
+
+15:"Semoga kopi ini menghangatkan hatimu yang sedang lelah."
+
 };
 
 const params = new URLSearchParams(window.location.search);
@@ -20,7 +166,7 @@ const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 
 document.getElementById("quote").innerHTML =
-quotes[id] || "Selamat menikmati kopi ☕";
+quotes[id] || "☕ Semoga harimu sehangat kopi yang sedang kamu nikmati.";
 
 </script>
 
