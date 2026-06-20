@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Kopi Quote</title>
+</head>
+<body style="background:black;color:white;text-align:center;padding-top:100px;font-size:30px">
+
+<div id="quote"></div>
+
+<script>
+
+const quotes = {
+1:"Jangan menyerah sekarang.",
+2:"Kamu lebih kuat dari yang kamu kira.",
+3:"Kadang yang hilang hanya sedang mengajarkan."
+};
+
+const params = new URLSearchParams(window.location.search);
+
+const id = params.get("id");
+
+document.getElementById("quote").innerHTML =
+quotes[id] || "Selamat menikmati kopi ☕";
+
+</script>
+
+</body>
+</html>
